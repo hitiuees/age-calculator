@@ -1,17 +1,20 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("sbmit").onclick = function() {
-        let year = document.getElementById("form").textContent.trim();
-        let yearInput = parseInt(year);
+window.onload = function() {
+    let formInput = document.getElementById("form");
+    let sbmitButton = document.getElementById("submit");
 
-        if (isNaN(yearInput) || year === "") {
-            alert("Please enter your birth year");
-        } else {
-            let currentYear = 2024;
-            let age = currentYear - yearInput;
-            window.alert(`Your age is ${age}`);
-        }
-    }
-});
+        sbmitButton.onclick = function() {
+            let yearInput = parseInt(formInput.value.trim());
+
+            if (isNaN(yearInput) || yearInput === "") {
+                alert("Please enter your birth year");
+            } else {
+                let currentYear = 2024;
+                let age = currentYear - yearInput;
+                window.alert(`Your age is ${age}`);
+            }
+        };
+   
+};
 
 
 
